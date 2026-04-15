@@ -35,7 +35,7 @@ const Main: React.FC = () => {
       </div>
       <Settings />
       <button 
-        className="w-full py-3 mt-3 bg-blue-500 text-white border-none rounded-md text-sm font-semibold cursor-pointer hover:bg-blue-600 transition-colors"
+        className="w-full py-3 mt-3 bg-gradient-ai-general-5 border-none rounded-md text-sm font-semibold cursor-pointer hover:opacity-90 transition-opacity"
         onClick={openSidepanel}
       >
         打开侧边栏
