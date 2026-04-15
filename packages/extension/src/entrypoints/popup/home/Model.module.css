@@ -1,0 +1,139 @@
+.model-section {
+  background: #ffffff;
+  border-radius: 12px;
+  margin: 10px 0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title-icon {
+  color: #3b82f6;
+}
+
+.selectors-row {
+  display: flex;
+  gap: 12px;
+}
+
+.selector-half {
+  flex: 1;
+}
+
+.selector-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 6px;
+  padding-left: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.label-icon {
+  color: #3b82f6;
+}
+
+.popover-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  background: #eff6ff;
+  border: 1px solid rgba(0, 120, 255, 0.1);
+  /* border-style: dashed; */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.popover-trigger:hover {
+  border-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.trigger-name {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 600;
+  color: #147dfd;
+}
+
+.dropdown-arrow {
+  color: #64748b;
+  transition: transform 0.2s ease;
+}
+
+.popover-list {
+  min-width: 280px;
+  padding: 4px;
+}
+
+.popover-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+
+.popover-item:last-child {
+  margin-bottom: 0;
+}
+
+.popover-item:hover {
+  background: #f1f5f9;
+}
+
+.popover-item.selected {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+}
+
+.item-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.item-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.item-desc {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item-count {
+  font-size: 10px;
+  color: #3b82f6;
+  background: #eff6ff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}

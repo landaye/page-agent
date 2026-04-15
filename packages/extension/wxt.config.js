@@ -52,16 +52,20 @@ export default defineConfig({
 		},
 		action: {
 			default_title: '__MSG_extActionTitle__',
+			default_popup: 'popup/index.html',
 		},
+
 		web_accessible_resources: [
 			{
 				resources: ['main-world.js'],
 				matches: ['*://*/*'],
 			},
 		],
+
 		side_panel: {
-			default_path: 'sidepanel/index.html',
+			default_path: ''
 		},
+
 		externally_connectable: {
 			matches: ['http://localhost/*'],
 		},
