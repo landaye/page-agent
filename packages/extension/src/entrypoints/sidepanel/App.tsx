@@ -79,6 +79,35 @@ export default function App() {
 		}
 	}, [history, activity])
 
+	// Check for openSettings flag on component load
+	useEffect(() => {
+		const checkOpenSettings = async () => {
+			const result = await chrome.storage.local.get('openSettings')
+			if (result.openSettings) {
+				setView({ name: 'config' })
+				// Clear the flag
+				await chrome.storage.local.remove('openSettings')
+			}
+		}
+
+		checkOpenSettings()
+	}, [])
+
+	// Listen for messages from popup to open settings
+	useEffect(() => {
+		const handleMessage = (message: any) => {
+			if (message.action === 'openSettings') {
+				setView({ name: 'config' })
+			}
+		}
+
+		chrome.runtime.onMessage.addListener(handleMessage)
+
+		return () => {
+			chrome.runtime.onMessage.removeListener(handleMessage)
+		}
+	}, [])
+
 	const runTask = useCallback(
 		(task: string) => {
 			const normalizedTask = task.trim()

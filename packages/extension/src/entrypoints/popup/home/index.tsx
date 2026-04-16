@@ -11,6 +11,9 @@ const Main: React.FC = () => {
         const tab = tabs[0];
         await chrome.sidePanel.open({ tabId: tab.id!, windowId: tab.windowId });
         console.log('Sidepanel opened successfully');
+        
+        // Close popup
+        window.close();
       } else {
         console.error('No active tab found');
       }
