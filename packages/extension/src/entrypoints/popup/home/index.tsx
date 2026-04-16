@@ -20,7 +20,7 @@ const Main: React.FC = () => {
   };
 
   return (
-    <main className="flex flex-col justify-between p-5 pb-3 overflow-y-auto bg-gray-50">
+    <main className="flex flex-col justify-between px-5 py-3  overflow-y-auto bg-gray-50">
       <Model />
       <div className="mb-2">
         <div className="flex justify-between items-center mb-2.5">
