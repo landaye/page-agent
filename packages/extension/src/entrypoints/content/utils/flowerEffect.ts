@@ -58,8 +58,8 @@ class FlowerEffect {
 
         // 完全复制样式
         const customStyles = {
-            background: 'var(--semi-color-ai-general)',
-            color: 'var(--semi-color-white)',
+            background: "linear-gradient(278deg, rgba(var(--semi-ai-general-6-0)) 0%, rgba(var(--semi-ai-general-6-1)) 30%, rgba(var(--semi-ai-general-6-2)) 60%, rgba(var(--semi-ai-general-6-3)) 100%)",
+            color: "white",
             width: '16px',
             height: '16px',
             borderRadius: '50%',
@@ -123,11 +123,11 @@ class FlowerEffect {
 
         for (let i = 0; i < count; i++) {
             const customElement = this.createCustomIconElement();
-            
+
             // 预估尺寸（实际尺寸差异很小，优先保证动画启动速度）
             const estimatedWidth = 16;
             const estimatedHeight = 16;
-            
+
             let initOffsetX = 0;
             let initOffsetY = 0;
 
@@ -138,11 +138,11 @@ class FlowerEffect {
                 initOffsetY = -Math.floor(Math.random() * 30) - 10;
             }
             // 精准图标：offsetX和offsetY都为0，无偏移
-            
+
             // 计算初始位置
             const startX = mouseX - estimatedWidth / 2 + initOffsetX;
             const startY = mouseY - estimatedHeight / 2 + initOffsetY;
-            
+
             // 先设置定位再添加到DOM
             customElement.style.left = `${startX}px`;
             customElement.style.top = `${startY}px`;

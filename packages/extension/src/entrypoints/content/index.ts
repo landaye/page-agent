@@ -4,12 +4,13 @@ import { ContentScriptContext, createShadowRootUi, injectScript } from "#imports
 import React from 'react';
 import appStyles from './App.module.css?inline';
 import ModalStyles from './page/modal/index.module.css?inline';
+import indexStyles from '@/assets/index.css?inline';
 import watchCopy from '@/entrypoints/content/watchCopy';
 import { initPageController } from '@/agent/RemotePageController.content';
 // 之前的 initReactPage 函数
 export async function initReactPage(ctx: ContentScriptContext) {
   console.log('initReactPage');
-  const combinedStyles = `${appStyles}${ModalStyles}`;
+  const combinedStyles = `${appStyles}${ModalStyles}${indexStyles}`;
   const ui = await createShadowRootUi(ctx, {
     name: "wxt-react-page",
     position: "overlay",

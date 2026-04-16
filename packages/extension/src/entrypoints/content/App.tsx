@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'; // 新增：导入useEffect
 import styles from './App.module.css';
+import '@/assets/index.css';
 import { useUtilityButton } from '@/entrypoints/content/hooks/useUtilityButton';
 import { useDraggable } from '@/entrypoints/content/hooks/useDraggable';
 import { Button } from '@/components/ui/button';
@@ -32,7 +33,7 @@ function App() {
         <div className={styles.floatingContainer}>
           <div className={styles.verticalMenu}
             onMouseEnter={() => setShowButtons(true)}
-            onMouseLeave={() => setShowButtons(false)}>
+            onMouseLeave={() => setShowButtons(true)}>
             {/* 拖动固定菜单 */}
             <div style={{
               display: "flex",
@@ -47,9 +48,7 @@ function App() {
               borderRadius: "50%",
             }}>
 
-              <div style={{
-                background: 'var(--semi-color-ai-general)',
-                color: 'var(--semi-color-white)',
+              <div className="bg-gradient-ai-general-5"  style={{
                 width: '40px',
                 height: '40px',      // 补充内边距，让内容不拥挤
                 borderRadius: '50%',      // 补充圆角，提升视觉效果
@@ -63,7 +62,7 @@ function App() {
                 fontSize: '12px',
                 cursor: 'pointer',
               }}>
-                <MagicWandIcon className="text-white" />
+               <MagicWandIcon className="text-white" />
               </div>
 
             </div>
@@ -76,7 +75,6 @@ function App() {
                     flexDirection: "column",
                     justifyContent: "center",
                     alignItems: "center",
-                    backgroundColor: " #ffffff",
                     boxShadow: '1px 6px 6px 1px rgba(0, 0, 0, 0.1)',
                     padding: "6px",
                     gap: "6px",
@@ -87,10 +85,8 @@ function App() {
                 }>
                   {/* 打开ai解答页面的按钮 */}
                   <Button
-                    className='ct-ai-answer-button rounded-full p-2'
-                    style={{
-                      background: 'var(--semi-color-ai-general)',
-                    }} size="icon-sm" onClick={async (e) => {
+                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full p-2'
+                    onClick={async (e) => {
                       // 阻止事件冒泡，避免触发modal的关闭逻辑
                       e.stopPropagation();
                       // 获取按钮位置
@@ -108,16 +104,13 @@ function App() {
                       // 设置弹窗工具标题
                       setUtilityTitle('AI解答');
                     }} >
-                    <ClockIcon className="text-white" />
+                    <ClockIcon/>
                   </Button>
 
                   {/* 反馈 */}
                   <Button
-                    className='ct-ai-answer-button rounded-full p-2'
-                    style={{
-                      background: 'var(--semi-color-ai-general)',
-                    }} size="icon-sm" onClick={(e) => {
-
+                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full p-2'
+                    onClick={(e) => {
                     }} >
                     <FeedbackIcon />
                   </Button>
@@ -229,9 +222,7 @@ function App() {
             gap: '4px',
           }}>
             {/* 第一种样式：主色背景+白色文字 */}
-            <div style={{
-              background: 'var(--semi-color-ai-general)',
-              color: 'var(--semi-color-white)',
+            <div className='bg-gradient-ai-general-5 text-white'  style={{
               padding: '2px 8px',       // 补充内边距，让内容不拥挤
               borderRadius: '15px',      // 补充圆角，提升视觉效果
               display: 'inline-flex',   // 让图标和文字水平对齐
@@ -327,7 +318,6 @@ function App() {
           </div>
         </DragModal>
       )}
-
     </div>
   );
 }
