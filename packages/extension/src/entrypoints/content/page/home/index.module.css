@@ -1,0 +1,23 @@
+.copyContentMarkdown {
+    overflow: auto;
+}
+
+.copyContentMarkdown::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.copyContentMarkdown::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.copyContentMarkdown::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.copyContentMarkdown::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,23 @@
+@tailwind utilities;
+#wxt-react-page-wrapper {
+  /* position: fixed; */
+  /* top: 52px;
+  right: 58px; */
+  z-index: 99999999;
+  font-family: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif' !important
+}
+
+.floatingContainer {
+  height: auto;
+  z-index: 99999999;
+}
+
+
+.verticalMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 99999998;
+}

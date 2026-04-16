@@ -1,0 +1,74 @@
+/* 弹窗容器：绝对定位 + 过渡保证丝滑 */
+.dragModal {
+  position: fixed;
+  width: 450px;
+  min-height: 300px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  /* 过渡优化：仅对非拖拽状态生效，避免拖拽时卡顿 */
+  transition: top 0.1s ease, left 0.1s ease;
+  /* 禁止内部文本拖拽时被选中 */
+  user-select: none;
+}
+
+/* 拖拽头部：区分可拖拽区域 */
+.dragModalHeader {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  background: #ffffff;
+  border-radius: 8px 8px 0 0;
+}
+
+.dragModalTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* 关闭按钮 */
+.dragModalClose {
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  color: #999;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.dragModalClose:hover {
+  background: #eee;
+  color: #666;
+}
+
+/* 弹窗内容区 */
+.dragModalContent {
+  padding: 16px;
+  min-height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* 拖拽时移除过渡，保证实时跟随鼠标 */
+.dragModal:active,
+.dragModal.dragging {
+  transition: none;
+}
