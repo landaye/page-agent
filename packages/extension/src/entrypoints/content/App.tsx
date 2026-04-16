@@ -62,9 +62,8 @@ function App() {
                 fontSize: '12px',
                 cursor: 'pointer',
               }}>
-               <MagicWandIcon className="text-white" />
+               <MagicWandIcon width={24} height={24} />
               </div>
-
             </div>
             {/* 按钮 */}
             {showButtons && (
@@ -85,7 +84,8 @@ function App() {
                 }>
                   {/* 打开ai解答页面的按钮 */}
                   <Button
-                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full p-2'
+                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full'
+                    style={{ width: '24px', height: '24px' }}
                     onClick={async (e) => {
                       // 阻止事件冒泡，避免触发modal的关闭逻辑
                       e.stopPropagation();
@@ -104,15 +104,16 @@ function App() {
                       // 设置弹窗工具标题
                       setUtilityTitle('AI解答');
                     }} >
-                    <ClockIcon/>
+                    <ClockIcon width={16} height={16} />
                   </Button>
 
                   {/* 反馈 */}
                   <Button
-                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full p-2'
+                    className='bg-gradient-ai-general-5 ct-ai-answer-button rounded-full'
+                    style={{ width: '24px', height: '24px' }}
                     onClick={(e) => {
                     }} >
-                    <FeedbackIcon />
+                    <FeedbackIcon width={16} height={16} />
                   </Button>
                 </div>
               </>

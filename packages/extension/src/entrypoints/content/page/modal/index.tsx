@@ -186,7 +186,7 @@ const DragModal: React.FC<DragModalProps> = ({
     };
   }, [isFixed, visible]);
 
-  
+
   //=============菜单功能=================
   // 清除历史记录
   const clearHistory = async () => {
@@ -316,15 +316,15 @@ const DragModal: React.FC<DragModalProps> = ({
               gap: '6px',
               justifyContent: 'center',
             }}>
-              <Button variant="ghost" size="sm" onClick={() => switchPrevHistory()} disabled={historyList.data.length === 0}>
-                <ChevronLeftIcon className="w-4 h-4" />
+              <Button variant="ghost" onClick={() => switchPrevHistory()} disabled={historyList.data.length === 0}>
+                <ChevronLeftIcon width={16} height={16} />
               </Button>
               <span style={{
                 fontSize: '12px',
                 color: '#666',
               }}>{historyIndex + 1}/{historyCount}</span>
-              <Button variant="ghost" size="sm" onClick={() => switchNextHistory()} disabled={historyList.data.length === 0}>
-                <ChevronRightIcon className="w-4 h-4" />
+              <Button variant="ghost" onClick={() => switchNextHistory()} disabled={historyList.data.length === 0}>
+                <ChevronRightIcon width={16} height={16} />
               </Button>
             </div>
           )}
@@ -336,44 +336,44 @@ const DragModal: React.FC<DragModalProps> = ({
           <Button
             id="ct-ai-answer--button"
             variant="ghost"
-            size="sm"
+            style={{ width: '24px', height: '24px' }}
             onClick={() => onFixed()}
           >
-            <FixedIcon color={isFixed ? '#bc45ff' : '#666666'} />
+            <FixedIcon width={16} height={16} color={isFixed ? '#bc45ff' : '#666666'} />
           </Button>
           {/* 更多按钮 */}
           <div className="relative">
             <Button
               id="ct-ai-answer-more-button"
               variant="ghost"
-              size="sm"
+              style={{ width: '24px', height: '24px' }}
               onClick={() => setDropdownOpen(!dropdownOpen)}
             >
-              <DotsHorizontalIcon className="w-4 h-4" />
+              <DotsHorizontalIcon width={16} height={16} />
             </Button>
             {dropdownOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 border border-gray-200">
-                <div className="px-4 py-2 text-sm font-medium text-gray-700">分组1</div>
-                <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
-                  <BoxIcon className="w-4 h-4" />
+              <div className="absolute right-0 mt-2 w-64 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-200">
+                <div className="px-4 py-3 text-lg font-medium text-gray-800">分组1</div>
+                <button className="w-full text-left px-4 py-3 text-lg text-gray-700 hover:bg-gray-100 flex items-center gap-3">
+                  <BoxIcon className="w-6 h-6" />
                   Menu Item 1
-                  <span className="ml-auto text-xs text-gray-500">Ctrl+B</span>
+                  <span className="ml-auto text-base text-gray-500">Ctrl+B</span>
                 </button>
-                <button className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-2">
-                  <GearIcon className="w-4 h-4" />
+                <button className="w-full text-left px-4 py-3 text-lg text-gray-700 hover:bg-gray-100 flex items-center gap-3">
+                  <GearIcon className="w-6 h-6" />
                   Menu Item 2
-                  <span className="ml-auto text-xs text-gray-500">Ctrl+V</span>
+                  <span className="ml-auto text-base text-gray-500">Ctrl+V</span>
                 </button>
                 <div className="border-t border-gray-200 my-1"></div>
-                <div className="px-4 py-2 text-sm font-medium text-gray-700">分组2</div>
-                <button 
-                  className="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 flex items-center gap-2"
+                <div className="px-4 py-3 text-lg font-medium text-gray-800">分组2</div>
+                <button
+                  className="w-full text-left px-4 py-3 text-lg text-red-600 hover:bg-gray-100 flex items-center gap-3"
                   onClick={() => {
                     clearHistory();
                     setDropdownOpen(false);
                   }}
                 >
-                  <ClockIcon className="w-4 h-4" />
+                  <ClockIcon className="w-6 h-6" />
                   清除缓存
                 </button>
               </div>
@@ -383,10 +383,10 @@ const DragModal: React.FC<DragModalProps> = ({
           <Button
             id="ct-ai-answer-close-button"
             variant="ghost"
-            size="sm"
+            style={{ width: '24px', height: '24px' }}
             onClick={() => onClose()}
           >
-            <Cross2Icon className="w-4 h-4" />
+            <Cross2Icon width={16} height={16} />
           </Button>
         </div>
       </div>
